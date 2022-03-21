@@ -1,1 +1,7 @@
-<p>file works!</p>
+<div *ngIf="file">
+  <p> FILE: {{ file.name }} </p>
+  <button (click)="addUnsetNode()">Add unset</button>
+  <div *ngFor="let child of file.children">
+    <app-node [node]="child"></app-node>
+  </div>
+</div>

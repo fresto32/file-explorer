@@ -1,1 +1,7 @@
-<p>folder works!</p>
+<div *ngIf="folder">
+  <p> FOLDER: {{ folder.name }} </p>
+  <button (click)="addUnsetNode()">Add unset</button>
+  <div *ngFor="let child of folder.children">
+    <app-node [node]="child"></app-node>
+  </div>
+</div>

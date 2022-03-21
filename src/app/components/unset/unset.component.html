@@ -1,0 +1,11 @@
+<div *ngIf="node">
+  <div *ngIf="!node.unsetType; else setName">
+    <button (click)="setType('file')">File</button>
+    <button (click)="setType('folder')">Folder</button>
+  </div>
+
+  <ng-template #setName>
+    <input #name type="text" />
+    <button (click)="submit(name.value)">Submit</button>
+  </ng-template>
+</div>
