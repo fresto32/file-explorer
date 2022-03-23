@@ -21,7 +21,7 @@
       <button (click)="addUnsetNode()">
         <mat-icon class="white-icon">add</mat-icon>
       </button>
-      <button (click)="deleteNode()">
+      <button *ngIf="node.parent" (click)="deleteNode()">
         <mat-icon class="white-icon">delete</mat-icon>
       </button>
     </div>
