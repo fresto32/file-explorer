@@ -11,7 +11,7 @@ import { INode } from '../../models/node';
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.component.html',
-  styleUrls: ['./folder.component.scss', '../common_styles/node_types.scss'],
+  styleUrls: ['../common_styles/node_types.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FolderComponent extends NodeType {
