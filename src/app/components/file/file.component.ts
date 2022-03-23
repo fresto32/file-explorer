@@ -1,31 +1,18 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { NodeType } from 'src/app/classes/node-type';
 import { NodeService } from 'src/app/services/node.service';
-import { INode, UNSET_NODE } from '../../models/node';
+import { INode } from '../../models/node';
 
 @Component({
   selector: 'app-file',
   templateUrl: './file.component.html',
-  styleUrls: ['./file.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./file.component.scss', '../common_styles/node_types.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FileComponent implements OnInit {
-  @Input() file: INode | null = null;
+export class FileComponent extends NodeType {
+  @Input() override node: INode | null = null;
 
-  constructor(private _nodeService: NodeService) {}
-
-  ngOnInit(): void {}
-
-  addUnsetNode(): void {
-    if (!this.file) {
-      console.error('Cannot add unset node to undefined file');
-      return;
-    }
-
-    this._nodeService.addUnsetNodeTo(this.file);
+  constructor(_nodeService: NodeService) {
+    super(_nodeService);
   }
 }

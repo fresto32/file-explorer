@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  display: inline-block;
+
+}
+
+.contents {
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  display: flex;
+  border: 1px solid white;
+}
+
+.contents:hover {
+  border: 1px solid black;
+  border-radius: 10%;
+}
+
+.fa-file {
+  width: 0.8em;
+  padding-right: 0.4em;
+}
+
+.fa-folder-open {
+  width: 1em;
+  padding-right: 0.4em;
+}
+
+p {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+button {
+  background-color: black;
+  margin-left: 0.6em;
+  height: 50%;
+
+
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+  padding: 0 0 0 0;
+
+  border-radius: 40%;
+}
+
+.mat-icon {
+  transform: translate(0%, 5%)
+}
+

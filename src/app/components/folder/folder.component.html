@@ -1,7 +1,32 @@
-<div *ngIf="folder">
-  <p> FOLDER: {{ folder.name }} </p>
-  <button (click)="addUnsetNode()">Add unset</button>
-  <div *ngFor="let child of folder.children">
+<div *ngIf="node">
+  <div class="container">
+    <div class="contents">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="far"
+        data-icon="folder-open"
+        class="svg-inline--fa fa-folder-open fa-w-18"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 576 512"
+      >
+        <path
+          fill="currentColor"
+          d="M527.9 224H480v-48c0-26.5-21.5-48-48-48H272l-64-64H48C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h400c16.5 0 31.9-8.5 40.7-22.6l79.9-128c20-31.9-3-73.4-40.7-73.4zM48 118c0-3.3 2.7-6 6-6h134.1l64 64H426c3.3 0 6 2.7 6 6v42H152c-16.8 0-32.4 8.8-41.1 23.2L48 351.4zm400 282H72l77.2-128H528z"
+        ></path>
+      </svg>
+
+      <p>{{ node.name }}</p>
+      <button (click)="addUnsetNode()">
+        <mat-icon class="white-icon">add</mat-icon>
+      </button>
+      <button (click)="deleteNode()">
+        <mat-icon class="white-icon">delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div *ngFor="let child of node.children">
     <app-node [node]="child"></app-node>
   </div>
 </div>

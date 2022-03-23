@@ -1,5 +1,5 @@
 <div *ngIf="node" [ngSwitch]="node.type" class="node-container">
-  <app-file *ngSwitchCase="'file'" [file]="node"></app-file>
-  <app-folder *ngSwitchCase="'folder'" [folder]="node"></app-folder>
+  <app-file *ngSwitchCase="'file'" [node]="node"></app-file>
+  <app-folder *ngSwitchCase="'folder'" [node]="node"></app-folder>
   <app-unset *ngSwitchCase="'unset'" [node]="node"></app-unset>
 </div>
