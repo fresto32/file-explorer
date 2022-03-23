@@ -2,7 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  OnInit
+  OnInit,
 } from '@angular/core';
 import { INode } from 'src/app/models/node';
 
@@ -10,7 +10,7 @@ import { INode } from 'src/app/models/node';
   selector: 'app-unset',
   templateUrl: './unset.component.html',
   styleUrls: ['./unset.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UnsetComponent implements OnInit {
   @Input() node!: INode;
